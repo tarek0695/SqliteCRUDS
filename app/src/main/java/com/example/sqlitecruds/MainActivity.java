@@ -102,25 +102,28 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
 
                 ArrayList<String> userList = new ArrayList<>();
-                /*for (String user : listitem){
+                for (String user : listitem){
                     if (user.toLowerCase().contains(newText.toLowerCase())){
                         userList.add(user);
                     }
-                }*/
-                if(!newText.isEmpty()){
-                    userList=databaseHelper.searchUsersstring(newText);
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, userList);
-
-                    myListview.setAdapter(adapter);
-                }
-                else{
-                    userList.clear();
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, userList);
-
-                    myListview.setAdapter(adapter);
                 }
 
+//                if(!newText.isEmpty()){
+//                    userList=databaseHelper.searchUsersstring(newText);
+//                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, userList);
+//
+//                    myListview.setAdapter(adapter);
+//                }
+//                else{
+//                    userList.clear();
+//                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, userList);
+//
+//                    myListview.setAdapter(adapter);
+//                }
 
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, userList);
+
+                myListview.setAdapter(adapter);
 
                 return true;
             }
